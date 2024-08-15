@@ -19,6 +19,8 @@ def merge(arr, low, mid, high):
     for i in range(low, high + 1):
         arr[i] = temp[i - low]
 
+    del temp  # to reduce the taken space
+
 
 def merge_sort(arr, low, high):
     if low >= high:
