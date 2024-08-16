@@ -8,7 +8,7 @@ def counter(nums):
         if i == 1:
             count += 1
             if count > maxx:
-                maxx += 1
+                maxx += 1  # or maxx=max(count,maxx)
         else:
             count = 0
     return maxx
