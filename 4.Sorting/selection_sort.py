@@ -10,3 +10,8 @@ def selection_sort(l1):
 
 
 print(selection_sort(l1))
+
+"""
+TC=O(N^2)
+SC=O(1)
+"""

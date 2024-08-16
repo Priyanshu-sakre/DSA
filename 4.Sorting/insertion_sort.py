@@ -11,3 +11,9 @@ def insertion_sort(l1):
 
 
 print(insertion_sort(l1))
+
+"""
+TC=O(N^2)
+SC=O(1)
+BEST CASE=O(N)
+"""

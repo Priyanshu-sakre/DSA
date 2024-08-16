@@ -15,3 +15,8 @@ def bubble_sort(l1):
 
 
 print(bubble_sort(l1))
+
+"""
+TC=O(N^2)
+SC=O(1)
+BEST CASE=O(N)"""

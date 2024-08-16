@@ -24,3 +24,8 @@ def quick_sort(arr, low, high):
 arr = [64, 25, 12, 22, 11]
 high = len(arr) - 1
 print(quick_sort(arr, 0, high))
+
+"""
+TC=O(NLOGN)
+SC=O(1)
+"""

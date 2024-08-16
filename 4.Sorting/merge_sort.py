@@ -35,3 +35,8 @@ def merge_sort(arr, low, high):
 arr = [64, 25, 12, 22, 11]
 n = len(arr)
 print(merge_sort(arr, 0, n - 1))
+
+"""
+TC=O(NLOGN)
+SC=O(N)
+"""
