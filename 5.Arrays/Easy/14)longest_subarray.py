@@ -57,7 +57,7 @@ def longest_subarray3(arr, n, k):
     i = j = 0
     maxL = 0
     while j < n:
-        while sum1 > k:
+        while i<=j and sum1 > k:
             sum1 -= arr[i]
             i += 1
         if sum1 == k:
