@@ -27,6 +27,9 @@ print(majorityElement2(nums))
 
 
 # optimal
+"""Moore's Voting Algorithm"""
+
+
 def majorityElement3(nums):
     count = 0
     for i in range(len(nums)):
