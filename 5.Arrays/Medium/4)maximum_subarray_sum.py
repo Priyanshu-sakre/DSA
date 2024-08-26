@@ -48,4 +48,30 @@ def maxSubArray3(nums):
     return max1
 
 
-print(maxSubArray2(nums))
+print(maxSubArray3(nums))
+
+
+# follow up question to print the sub-array
+def maxSubArray4(nums):
+    sum1 = 0
+    max1 = nums[0]
+    ans_s = 0
+    ans_e = 0
+    for i in range(len(nums)):
+        if sum1 == 0:
+            start = i
+        sum1 += nums[i]
+        # max1 = max(max1, sum1) (either of them can be used)
+        if sum1 > max1:
+            max1 = sum1
+            ans_s = start
+            ans_e = i
+        if sum1 < 0:
+            sum1 = 0
+    for i in range(ans_s, ans_e + 1):
+        print(nums[i], end=" ")
+    print(nums[ans_s : ans_e + 1])
+    # any on the above
+
+
+maxSubArray4(nums)

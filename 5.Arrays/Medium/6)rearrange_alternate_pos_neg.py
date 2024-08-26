@@ -10,7 +10,7 @@ def rearrangeArray(nums: List[int]) -> List[int]:
             pos.append(i)
         else:
             neg.append(i)
-    for i in range(len(pos)):
+    for i in range(len(neg)):
         nums[i * 2] = pos[i]
         nums[(i * 2) + 1] = neg[i]
     return nums
