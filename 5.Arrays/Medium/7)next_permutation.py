@@ -40,7 +40,7 @@ def next_permutation2(arr: List):
     if index1 == -1:
         reverse1(arr, 0, n - 1)
         return arr
-    for i in range(n - 1, index1-1, -1):
+    for i in range(n - 1, index1, -1):
         if arr[i] > arr[index1]:
             arr[i], arr[index1] = arr[index1], arr[i]
             break
