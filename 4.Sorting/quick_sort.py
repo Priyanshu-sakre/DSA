@@ -18,12 +18,18 @@ def quick_sort(arr, low, high):
         par_index = partition(arr, low, high)
         quick_sort(arr, low, par_index - 1)
         quick_sort(arr, par_index + 1, high)
-        return arr
+        # return arr
+
+
+def func(arr, low, high):
+    quick_sort(arr, low, high)
+    return arr
 
 
 arr = [64, 25, 12, 22, 11]
 high = len(arr) - 1
-print(quick_sort(arr, 0, high))
+# print(quick_sort(arr, 0, high))
+print(func(arr, 0, high))
 
 """
 TC=O(NLOGN)
