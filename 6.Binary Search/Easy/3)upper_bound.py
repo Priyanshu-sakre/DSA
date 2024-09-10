@@ -1,4 +1,4 @@
-def lower_bound(arr, target):
+def upper_bound(arr, target):
     ans = len(arr)
     low = 0
     high = len(arr) - 1
