@@ -7,8 +7,7 @@ for i in range(len(arr)):
         if first == -1:
             first = i
             # last = i
-        if last < i:
-            last = i
+        last = i
 print([first, last])
 
 
