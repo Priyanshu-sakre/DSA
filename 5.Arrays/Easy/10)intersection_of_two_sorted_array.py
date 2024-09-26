@@ -6,7 +6,7 @@ m = len(l2)
 
 # brute
 def intersection(l1, l2, n, m):
-    visit = [0] * m
+    visit = [0] * min(n,m)
     intersect = []
     for i in range(n):
         for j in range(m):
