@@ -11,6 +11,7 @@ class Solution:
         mover = head
         for i in range(1, len(arr)):
             temp = Node(arr[i])
+            tail = temp
             mover.next = temp
             temp.prev = mover
             mover = mover.next
@@ -18,3 +19,9 @@ class Solution:
         while current:
             print(current.data, end=" ")
             current = current.next
+        print()
+        print(tail.data)
+
+
+s = Solution()
+s.constructDLL([1, 2, 3, 4, 5, 6])
