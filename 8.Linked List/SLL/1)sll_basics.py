@@ -32,7 +32,7 @@ class SLL:
     # SEARCHING
     def search(self, target):
         current = self.head
-        while current.next:
+        while current:
             if current.val == target:
                 print(True)
                 return
@@ -54,38 +54,66 @@ class SLL:
                 prev = current
                 current = current.next
                 count += 1
-            new.next = current
             prev.next = new
+            new.next = current
 
     # LENGTH
     def len(self):
-        len1 = 1
+        len1 = 0
         current = self.head
-        while current.next:
+        while current:
             len1 += 1
             current = current.next
         print(len1)
 
     # DELETE HEAD
     def deleter_head(self):
+        if not self.head:
+            print("Linked List is empty")
+            return
         self.head = self.head.next
 
-    def delete_by_value(self, value):
-        current = self.head
-        while current.next:
-            if current.val == value:
-                current.val = current.next.val
-                current.next = current.next.next
-                break
-            current = current.next
-
     def deleter_tail(self):
+        if not self.head:
+            print("Linked List is empty")
+            return
         current = self.head
         prev = None
         while current.next:
             prev = current
             current = current.next
-        prev.next = current.next
+        prev.next = None
+
+    def delete_by_value(self, value):
+        if not self.head:
+            print("Linked List is empty")
+            return
+        current = self.head
+        if current.val == value:
+            self.head = current.next
+            return
+
+        # Traverse the list to find the value
+        while current.next:
+            if current.next.val == value:
+                current.next = current.next.next
+                return
+            current = current.next
+
+        print("Value not in linked list")
+
+    def deleter_pos(self, pos):
+        if not self.head:
+            print("Linked List is empty")
+        current = self.head
+        count = 0
+        prev = None
+        while current:
+            prev = current
+            current = current.next
+            if count == pos:
+                prev.next = current.next
+            count += 1
 
 
 n1 = Node(100)
@@ -107,16 +135,14 @@ sll.traverse()
 print()
 sll.deleter_head()
 sll.traverse()
+print()
 sll.delete_by_value(350)
-print()
 sll.traverse()
 print()
 sll.deleter_tail()
 sll.traverse()
 print()
-sll.deleter_tail()
-sll.traverse()
-print()
-sll.deleter_tail()
-sll.traverse()
+sll.search(300)
 # sll.search(200)
+sll.delete_by_value(200)
+sll.traverse()
