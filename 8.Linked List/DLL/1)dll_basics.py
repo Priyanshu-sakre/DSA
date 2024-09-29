@@ -91,8 +91,25 @@ class DLL:
         else:
             self.tail = self.tail.prev
             self.tail.next = None
-    def delete_by_value(self,ele):
-        pass
+
+    def delete_by_value(self, ele):
+        if not self.head:
+            print("DLL is empty")
+            return
+        current = self.head
+        if current.val == ele:
+            self.deleter_head()
+            return
+        while current.next:
+            if current.next.val == ele:
+                current.next = current.next.next
+                if current.next:
+                    current.next.prev = current
+                else:
+                    self.tail = current
+                return
+            current = current.next
+        print("Value not in Doubly Linked List")
 
 
 dll = DLL()
@@ -104,9 +121,13 @@ dll.traverse()
 dll.insert_at_tail(200)
 dll.traverse()
 print(dll.len())
-dll.insert_in_between(2, 500)
+dll.insert_in_between(3, 500)
 dll.traverse()
 dll.deleter_head()
 dll.traverse()
 dll.deleter_tail()
+dll.traverse()
+dll.insert_at_head(50)
+dll.traverse()
+dll.delete_by_value(300)
 dll.traverse()
