@@ -28,6 +28,7 @@ class SLL:
             while current:
                 print(current.val, end=" ")
                 current = current.next
+            print()
 
     # SEARCHING
     def search(self, target):
@@ -140,16 +141,12 @@ sll.insert(50, 1)
 sll.insert(350, 4)
 sll.len()
 sll.traverse()
-print()
 sll.deleter_head()
 sll.traverse()
-print()
 sll.delete_by_value(350)
 sll.traverse()
-print()
 sll.deleter_tail()
 sll.traverse()
-print()
 print(sll.len())
 sll.deleter_pos(3)
 sll.traverse()
