@@ -64,7 +64,7 @@ class SLL:
         while current:
             len1 += 1
             current = current.next
-        print(len1)
+        return len1
 
     # DELETE HEAD
     def deleter_head(self):
@@ -105,14 +105,22 @@ class SLL:
     def deleter_pos(self, pos):
         if not self.head:
             print("Linked List is empty")
+            return
         current = self.head
+        if pos == 0:
+            self.head = self.head.next
+            return
         count = 0
         prev = None
         while current:
-            prev = current
-            current = current.next
             if count == pos:
                 prev.next = current.next
+                return
+            if pos >= self.len():
+                sll.deleter_tail()
+                return
+            prev = current
+            current = current.next
             count += 1
 
 
@@ -142,7 +150,6 @@ print()
 sll.deleter_tail()
 sll.traverse()
 print()
-sll.search(300)
-# sll.search(200)
-sll.delete_by_value(200)
+print(sll.len())
+sll.deleter_pos(3)
 sll.traverse()
