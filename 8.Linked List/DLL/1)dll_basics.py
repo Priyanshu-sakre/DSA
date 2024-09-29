@@ -91,6 +91,8 @@ class DLL:
         else:
             self.tail = self.tail.prev
             self.tail.next = None
+    def delete_by_value(self,ele):
+        pass
 
 
 dll = DLL()
