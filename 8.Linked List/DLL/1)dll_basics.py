@@ -31,6 +31,25 @@ class DLL:
             node.prev = self.tail
             self.tail = node
 
+    def insert_in_between(self, pos, ele):
+        new = Node(ele)
+        if pos == 0:
+            dll.insert_at_head(ele)
+        elif pos >= dll.len():
+            dll.insert_at_tail(ele)
+        else:
+            current = self.head
+            count = 0
+            previ = None
+            while current and count < pos:
+                previ = current
+                current = current.next
+                count += 1
+            previ.next = new
+            new.prev = previ
+            new.next = current
+            current.prev = new
+
     def traverse(self):
         if not self.head:
             print("Doubly LL is empty")
@@ -58,25 +77,6 @@ class DLL:
             count += 1
             current = current.next
         return count
-
-    def insert_in_between(self, pos, ele):
-        new = Node(ele)
-        if pos == 0:
-            dll.insert_at_head(ele)
-        elif pos >= dll.len():
-            dll.insert_at_tail(ele)
-        else:
-            current = self.head
-            count = 0
-            previ = None
-            while current and count < pos:
-                previ = current
-                current = current.next
-                count += 1
-            previ.next = new
-            new.prev = previ
-            new.next = current
-            current.prev = new
 
     def deleter_head(self):
         if not self.head:
@@ -111,6 +111,24 @@ class DLL:
             current = current.next
         print("Value not in Doubly Linked List")
 
+    def deleter_by_pos(self, pos):
+        if pos == 1:
+            dll.deleter_head()
+            return
+        elif pos >= dll.len():
+            dll.deleter_tail()
+            return
+        else:
+            count = 1
+            current = self.head
+            temp = None
+            while current and count < pos:
+                temp = current
+                current = current.next
+                count += 1
+            temp.next = current.next
+            current.next.prev = temp
+
 
 dll = DLL()
 dll.traverse()
@@ -130,4 +148,6 @@ dll.traverse()
 dll.insert_at_head(50)
 dll.traverse()
 dll.delete_by_value(300)
+dll.traverse()
+dll.deleter_by_pos(3)
 dll.traverse()
