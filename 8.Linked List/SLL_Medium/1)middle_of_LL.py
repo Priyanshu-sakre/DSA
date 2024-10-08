@@ -16,7 +16,7 @@ class Solution:
             count += 1
             current = current.next
         return count
-# OPOTIMAL
+# OPTIMAL
 # TORTOISE AND HARE METHOD
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
