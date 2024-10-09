@@ -8,7 +8,6 @@ class Solution:
             count += 1
         return current
 
-
     def len1(self, head):
         count = 0
         current = head
@@ -16,6 +15,8 @@ class Solution:
             count += 1
             current = current.next
         return count
+
+
 # OPTIMAL
 # TORTOISE AND HARE METHOD
 class Solution:
