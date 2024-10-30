@@ -50,3 +50,16 @@ def majorityElement3(nums):
 
 
 print(majorityElement3(nums))
+# optimal 2
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        count = 0
+        el = 0
+        for i in range(len(nums)):
+            if count == 0:
+                el = nums[i]
+            if nums[i] == el:
+                count += 1
+            else:
+                count -= 1
+        return el

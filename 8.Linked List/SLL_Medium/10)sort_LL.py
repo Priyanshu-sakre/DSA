@@ -1,3 +1,4 @@
+#BRUTE
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         l1 = []
@@ -13,3 +14,4 @@ class Solution:
             count += 1
             current = current.next
         return head
+#OPTIMAL
