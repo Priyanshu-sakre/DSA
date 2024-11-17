@@ -1,5 +1,5 @@
 def selection_sort(arr, i):
-    if i > len(arr) - 2:
+    if i >= len(arr) - 1:
         return arr
     for j in range(i + 1, len(arr)):
         if arr[j] < arr[i]:
