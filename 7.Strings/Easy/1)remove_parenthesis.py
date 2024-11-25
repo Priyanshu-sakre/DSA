@@ -1,8 +1,8 @@
 def remove_parenthesis(s):
     str1 = ""
-    count = 1
+    count = 0
     i = 0
-    for j in range(1, len(s)):
+    for j in range(len(s)):
         if s[j] == "(":
             count += 1
         else:
