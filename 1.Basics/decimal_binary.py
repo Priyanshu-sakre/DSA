@@ -1,9 +1,11 @@
 # brute
 def fun(n):
     if n == 0:
-        return
+        return 0
     fun(n // 2)
     print(n % 2, end="")
+
+
 fun(17)
 print()
 # naive
