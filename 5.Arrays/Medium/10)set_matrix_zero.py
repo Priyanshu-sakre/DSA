@@ -30,7 +30,7 @@ def set_zeros(matrix):
 
 
 matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]
-print(numpy.matrix(set_zeros(matrix)))
+# print(numpy.matrix(set_zeros(matrix)))
 
 
 # better
@@ -42,8 +42,6 @@ def set_zeros2(matrix):
             if matrix[i][j] == 0:
                 rows[i] = 1
                 columns[j] = 1
-    rows = [0] * len(matrix)
-    columns = [0] * len(matrix[0])
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
             if rows[i] == 1 or columns[j] == 1:

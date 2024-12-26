@@ -3,14 +3,11 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         st = set()
         for i in range(len(nums)):
-            hash_map = {}
             for j in range(i + 1, len(nums)):
-                k = -(nums[i] + nums[j])
-                if k in hash_map:
-                    temp = [nums[i], nums[j], k]
+                for k in range(j + 1, len(nums)):
+                    temp = [nums[i], nums[j], nums[k]]
                     temp.sort()
                     st.add(tuple(temp))
-                hash_map[nums[j]] = 1
         ans = [list(items) for items in st]
         return ans
 
@@ -30,6 +27,8 @@ class Solution:
                 hash_map[nums[j]] = 1
         ans = [list(items) for items in st]
         return ans
+
+
 # optimal
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:

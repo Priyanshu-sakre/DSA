@@ -13,6 +13,7 @@ class Solution:
         for i in range(len(A)):
             rs = rs ^ A[i]
             x = rs ^ B
-            count += hash_map.get(x, 0)
+            if x in hash_map:
+                count += hash_map[x]
             hash_map[rs] = hash_map.get(rs, 0) + 1
         return count
