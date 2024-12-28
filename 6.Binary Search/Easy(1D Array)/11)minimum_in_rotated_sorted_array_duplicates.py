@@ -5,6 +5,7 @@ def mini(arr):
     while low <= high:
         mid = (low + high) // 2
         if arr[low] == arr[mid] == arr[high]:
+            ans=min(ans,arr[low])
             low += 1
             high -= 1
             continue
