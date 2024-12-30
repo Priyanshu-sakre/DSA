@@ -1,5 +1,5 @@
 def insertion_sort(arr, i):
-    if i >= len(arr):
+    if i > len(arr) - 1:
         return arr
     j = i
     while j > 0 and arr[j - 1] > arr[j]:

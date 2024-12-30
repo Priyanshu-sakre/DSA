@@ -7,7 +7,7 @@ class Node:
 class Solution:
     def searchKey(self, n, head, key):
         current = head
-        while current.next:
+        while current:
             if current.data == key:
                 return True
             current = current.next
